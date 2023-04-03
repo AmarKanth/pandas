@@ -34,74 +34,13 @@ dt2 = series.dt.is_quarter_start
 print(dt2)
 
 """
-pandas_reader library
+Date Offset
 """
 import pandas as pd
-import datetime as dt
-import yfinance as yf
 
-from pandas_datareader import data
-
-yf.pdr_override()
-start = dt.datetime(2010, 1, 1)
-end = dt.datetime(2020, 12, 31)
-
-stocks = data.get_data_yahoo("MSFT", start, end)
-t1 = stocks.loc[pd.Timestamp("2010-01-04")]
-t2 = stocks.loc[[pd.Timestamp("2010-01-04"), pd.Timestamp("2010-01-05")]]
-dates = pd.date_range(start="1991-04-12", end="2020-12-31", freq=pd.DateOffset(years=1))
-available_dates = stocks.index.isin(dates)
-print(stocks.loc[available_dates])
-
-"""
-DateOffset Object
-"""
-import pandas as pd
-import datetime as dt
-import yfinance as yf
-
-from pandas_datareader import data
-
-yf.pdr_override()
-start = dt.datetime(2010, 1, 1)
-end = dt.datetime(2020, 12, 31)
-
-stocks = data.get_data_yahoo("MSFT", start, end)
-offset = stocks.index + pd.DateOffset(days=5)
-print(offset)
-
-"""
-Timeseries Object
-"""
-import pandas as pd
-import datetime as dt
-import yfinance as yf
-
-from pandas_datareader import data
-
-yf.pdr_override()
-start = dt.datetime(2010, 1, 1)
-end = dt.datetime(2020, 12, 31)
-
-stocks = data.get_data_yahoo("MSFT", start, end)
-offset = stocks.index + pd.tseries.offsets.MonthEnd()
-print(offset)
-
-"""
-Timedelta Object
-"""
-import pandas as pd
-import datetime as dt
-import yfinance as yf
-
-from pandas_datareader import data
-
-yf.pdr_override()
-start = dt.datetime(2010, 1, 1)
-end = dt.datetime(2020, 12, 31)
-
-stocks = data.get_data_yahoo("MSFT", start, end)
-
-time_a = pd.Timestamp("2020-03-31")
-time_b = pd.Timestamp("2020-03-20")
-print(time_a-time_b)
+date = pd.Timestamp("2019-10-10 07:15:11")
+offset1 = pd.tseries.offsets.DateOffset(n=2)
+offset2 = pd.tseries.offsets.DateOffset(days=10, hours=2)
+offset3 = pd.tseries.offsets.MonthEnd()
+print(date)
+print(date+offset2)
