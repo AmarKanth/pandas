@@ -67,11 +67,7 @@ In place parameter
 """
 import pandas as pd
 
-google = (
-    pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"])
-    .squeeze("columns")
-    .copy()
-)
+google = pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"]).squeeze("columns").copy()
 
 google = google.sort_values()
 google.sort_values(inplace = True)
@@ -82,10 +78,8 @@ Math Methods
 """
 import pandas as pd
 
-google = (
-    pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"])
-    .squeeze("columns")
-)
+google = pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"]).squeeze("columns")
+
 print(google.count())
 print(google.sum())
 print(google.mean())
@@ -102,10 +96,8 @@ Broadcasting
 """
 import pandas as pd
 
-google = (
-    pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"])
-    .squeeze("columns")
-)
+google = pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"]).squeeze("columns")
+
 print(google + 10)
 print(google - 30)
 print(google * 100)
@@ -116,10 +108,8 @@ value_counts method
 """
 import pandas as pd
 
-pokemon = (
-    pd.read_csv("data/pokemon.csv", index_col= "Pokemon")
-    .squeeze("columns")
-)
+pokemon = pd.read_csv("data/pokemon.csv", index_col= "Pokemon").squeeze("columns")
+
 print(pokemon.value_counts())
 print(pokemon.value_counts(ascending = True).head())
 print(pokemon.value_counts(sort = False))
@@ -130,10 +120,7 @@ apply method
 """
 import pandas as pd
 
-pokemon = (
-    pd.read_csv("data/pokemon.csv", index_col= "Pokemon")
-    .squeeze("columns")
-)
+pokemon = pd.read_csv("data/pokemon.csv", index_col= "Pokemon").squeeze("columns")
 
 def rank_pokemon(pokemon_type):
     if pokemon_type in ["Grass", "Fire", "Water"]:
