@@ -16,7 +16,7 @@ sort_values
 1. squeeze converts dataframe to series object.
 """
 import pandas as pd
-res = pd.read_csv("python/pandas/data/pokemon.csv", usecols=["Pokemon"]).squeeze("columns")
+res = pd.read_csv("data/pokemon.csv", usecols=["Pokemon"]).squeeze("columns")
 print(res.sort_values(ascending=True).head())
 print(res.sort_values(ascending=False).head())
 
@@ -24,7 +24,7 @@ print(res.sort_values(ascending=False).head())
 sort_index
 """
 import pandas as pd
-res = pd.read_csv("python/pandas/data/pokemon.csv", index_col="Pokemon").squeeze("columns")
+res = pd.read_csv("data/pokemon.csv", index_col="Pokemon").squeeze("columns")
 print(res.sort_index(ascending=False))
 
 """
@@ -32,7 +32,7 @@ get method on pandas series
 1. if anyone of the value in the list not present, get method returns default value.
 """
 import pandas as pd
-res = pd.read_csv("python/pandas/data/pokemon.csv", index_col=["Pokemon"]).squeeze("columns")
+res = pd.read_csv("data/pokemon.csv", index_col=["Pokemon"]).squeeze("columns")
 print(res.get(0))
 print(res.get("Bulbasaur"))
 print(res.get([5, 10]))
@@ -43,7 +43,7 @@ print(res.get(["Moltres", "Digimon"], None))
 Over write pandas series value
 """
 import pandas as pd
-res = pd.read_csv("python/pandas/data/pokemon.csv", usecols=["Pokemon"]).squeeze("columns")
+res = pd.read_csv("data/pokemon.csv", usecols=["Pokemon"]).squeeze("columns")
 res[0] = "Amar"
 res[1500] = "Kanth"
 res[[1,2,3]] = ["Firemon", "Flamemon", "Blazemon"]
@@ -54,7 +54,7 @@ copy method
 copy will not change the original object.
 """
 import pandas as pd
-pokemon_df = pd.read_csv("python/pandas/data/pokemon.csv", usecols=["Pokemon"])
+pokemon_df = pd.read_csv("data/pokemon.csv", usecols=["Pokemon"])
 pokemon_series = pokemon_df.squeeze("columns").copy()
 pokemon_series[0] = "Amar"
 print(pokemon_series.head(1))
@@ -68,7 +68,7 @@ In place parameter
 import pandas as pd
 
 google = (
-    pd.read_csv("python/pandas/data/google_stock_price.csv", usecols=["Stock Price"])
+    pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"])
     .squeeze("columns")
     .copy()
 )
@@ -83,7 +83,7 @@ Math Methods
 import pandas as pd
 
 google = (
-    pd.read_csv("python/pandas/data/google_stock_price.csv", usecols=["Stock Price"])
+    pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"])
     .squeeze("columns")
 )
 print(google.count())
@@ -103,7 +103,7 @@ Broadcasting
 import pandas as pd
 
 google = (
-    pd.read_csv("python/pandas/data/google_stock_price.csv", usecols=["Stock Price"])
+    pd.read_csv("data/google_stock_price.csv", usecols=["Stock Price"])
     .squeeze("columns")
 )
 print(google + 10)
@@ -117,7 +117,7 @@ value_counts method
 import pandas as pd
 
 pokemon = (
-    pd.read_csv("python/pandas/data/pokemon.csv", index_col= "Pokemon")
+    pd.read_csv("data/pokemon.csv", index_col= "Pokemon")
     .squeeze("columns")
 )
 print(pokemon.value_counts())
@@ -131,7 +131,7 @@ apply method
 import pandas as pd
 
 pokemon = (
-    pd.read_csv("python/pandas/data/pokemon.csv", index_col= "Pokemon")
+    pd.read_csv("data/pokemon.csv", index_col= "Pokemon")
     .squeeze("columns")
 )
 
