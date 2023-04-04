@@ -3,7 +3,7 @@ set_index and reset_indx methods
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv")
+bond = pd.read_csv("data/jamesbond.csv")
 bond.set_index(keys='Film', inplace=True)
 r1 = bond.reset_index()
 r2 = bond.reset_index(drop=True)
@@ -15,7 +15,7 @@ loc Accessor
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 l1 = bond.loc["Goldfinger"]
 l2 = bond.loc["GoldenEye"]
@@ -34,7 +34,7 @@ iloc Accessor
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv")
+bond = pd.read_csv("data/jamesbond.csv")
 bond.set_index("Film", inplace=True)
 bond.sort_index()
 l1 = bond.iloc[0]
@@ -50,7 +50,7 @@ loc and iloc Accessor with second argument
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv")
+bond = pd.read_csv("data/jamesbond.csv")
 bond.set_index("Film", inplace=True)
 bond.sort_index()
 l1 = bond.loc["Moonraker", "Actor"]
@@ -74,7 +74,7 @@ Replace row or cell values with loc and iloc Accessor
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv")
+bond = pd.read_csv("data/jamesbond.csv")
 bond.set_index("Film", inplace=True)
 bond.sort_index()
 bond.loc["Dr. No", "Actor"] = "Sir Sean Connery"
@@ -86,7 +86,7 @@ Set Multiple values in df
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 actor_is_sean_connery = bond["Actor"] == "Sean Connery"
 bond.loc[actor_is_sean_connery, "Actor"] = "Sir Sean Connery"
@@ -97,7 +97,7 @@ Renaming column names
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 r1 = bond.rename(
     mapper={"GoldenEye": "Golden Eye", "The World Is Not Enough": "Best Bond Movie Ever"}, 
@@ -143,7 +143,7 @@ delete rows or columns from df
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 d1 = bond.drop(["A View to a Kill", "Die Another Day", "From Russia with Love"])
 d2 = bond.drop("Casino Royale", inplace=True)
@@ -158,7 +158,7 @@ create random sample
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 s1 = bond.sample()
 r1 = bond.sample(n=5)
@@ -172,7 +172,7 @@ nsmallest and nlargest methods
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 nl1 = bond.nlargest(3, columns="Box Office")
 nl2 = bond["Box Office"].nlargest(3)
@@ -185,7 +185,7 @@ where method
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 condition1 = bond["Actor"] == "Sean Connery"
 condition2 = bond["Box Office"] > 800
@@ -198,7 +198,7 @@ query method
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 bond.columns = [column_name.replace(" ", "_") for column_name in bond.columns]
 q1 = bond.query('Actor == "Sean Connery"')
@@ -215,7 +215,7 @@ apply method
 """
 import pandas as pd
 
-bond = pd.read_csv("Projects/python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 
 def convert_to_string_and_add_millions(number):
@@ -244,7 +244,7 @@ copy method
 """
 import pandas as pd
 
-bond = pd.read_csv("python/pandas/data/jamesbond.csv", index_col="Film")
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
 bond.sort_index(inplace=True)
 directors = bond["Director"].copy()
 directors["A View to a Kill"] = "Mister John Glen"
