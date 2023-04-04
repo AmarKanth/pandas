@@ -3,7 +3,7 @@ Memory Optimization
 """
 import pandas as pd
 
-nba = pd.read_csv("Projects/python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 print(nba.info())
@@ -13,7 +13,7 @@ Multiple Conditional Rendering
 """
 import pandas as pd
 
-nba = pd.read_csv("python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 
@@ -32,7 +32,7 @@ isin Method
 """
 import pandas as pd
 
-nba = pd.read_csv("python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 
@@ -49,7 +49,7 @@ Range of values
 """
 import pandas as pd
 
-nba = pd.read_csv("python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 
@@ -65,7 +65,7 @@ duplicate method
 """
 import pandas as pd
 
-nba = pd.read_csv("python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 nba.sort_values("First Name", inplace=True)
@@ -81,7 +81,7 @@ drop_duplicates Method
 """
 import pandas as pd
 
-nba = pd.read_csv("Projects/python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 nba.sort_values("First Name", inplace=True)
@@ -96,7 +96,7 @@ unique & nunique Method
 """
 import pandas as pd
 
-nba = pd.read_csv("Projects/python/pandas/data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
+nba = pd.read_csv("data/employees.csv", parse_dates=["Start Date", "Last Login Time"])
 nba["Senior Management"] = nba["Senior Management"].astype(bool)
 nba["Gender"] = nba["Gender"].astype("category")
 nba.sort_values("First Name", inplace=True)

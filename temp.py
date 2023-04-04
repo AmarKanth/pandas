@@ -1,6 +1,7 @@
 import pandas as pd
 
-nba = pd.read_csv("data/nba.csv")
-nba["Salary"] = nba["Salary"].fillna(0)
-nba["Salary Rank"] = nba["Salary"].rank(ascending=False).astype("int")
-print(nba.sort_values(by="Salary Rank").tail(20))
+bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
+bond.sort_index(inplace=True)
+condition1 = bond["Actor"] == "Sean Connery"
+condition2 = bond["Box Office"] > 800
+print(bond.where(condition1 & condition2).dropna())
