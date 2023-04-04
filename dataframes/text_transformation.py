@@ -3,7 +3,7 @@ lower, upper, title and len method
 """
 import pandas as pd
 
-chicago = pd.read_csv("Projects/python/pandas/data/chicago.csv")
+chicago = pd.read_csv("data/chicago.csv")
 chicago["Department"] = chicago["Department"].astype("category")
 t1 = chicago["Name"].str.title()
 t2 = chicago["Name"].str.title().str.upper()
@@ -14,7 +14,7 @@ replace method
 """
 import pandas as pd
 
-chicago = pd.read_csv("Projects/python/pandas/data/chicago.csv").dropna(how='all')
+chicago = pd.read_csv("data/chicago.csv").dropna(how='all')
 chicago["Department"] = chicago["Department"].astype("category")
 chicago["Employee Annual Salary"] = chicago["Employee Annual Salary"].str.replace("$", "").astype(float)
 print(chicago)
@@ -24,7 +24,7 @@ filter method
 """
 import pandas as pd
 
-chicago = pd.read_csv("Projects/python/pandas/data/chicago.csv").dropna(how='all')
+chicago = pd.read_csv("data/chicago.csv").dropna(how='all')
 chicago["Department"] = chicago["Department"].astype("category")
 
 f1 = chicago["Position Title"].str.lower().str.contains("water")
@@ -37,7 +37,7 @@ strip, lstrip and rstrip method
 """
 import pandas as pd
 
-chicago = pd.read_csv("Projects/python/pandas/data/chicago.csv").dropna(how='all')
+chicago = pd.read_csv("data/chicago.csv").dropna(how='all')
 chicago["Department"] = chicago["Department"].astype("category")
 
 chicago["Name"] = chicago["Name"].str.rstrip().str.lstrip()
@@ -50,7 +50,7 @@ split method
 """
 import pandas as pd
 
-chicago = pd.read_csv("Projects/python/pandas/data/chicago.csv").dropna(how='all')
+chicago = pd.read_csv("data/chicago.csv").dropna(how='all')
 chicago["Department"] = chicago["Department"].astype("category")
 chicago[["First Name", "Last Name"]] = chicago["Name"].str.split(",", expand=True)
 print(chicago)
