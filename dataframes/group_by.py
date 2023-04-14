@@ -3,7 +3,7 @@ group by Method
 """
 import pandas as pd
 
-fortune = pd.read_csv("pandas/data/fortune1000.csv", index_col="Rank")
+fortune = pd.read_csv("data/fortune1000.csv", index_col="Rank")
 sectors = fortune.groupby("Sector")
 g1 = sectors.first()
 g2 = sectors.last()
@@ -15,7 +15,7 @@ get_group by Method
 """
 import pandas as pd
 
-fortune = pd.read_csv("pandas/data/fortune1000.csv", index_col="Rank")
+fortune = pd.read_csv("data/fortune1000.csv", index_col="Rank")
 sectors = fortune.groupby("Sector")
 g1 = sectors.get_group("Energy")
 g2 = fortune[fortune["Sector"] == "Energy"]
@@ -33,7 +33,7 @@ group by on Muliple columns
 """
 import pandas as pd
 
-fortune = pd.read_csv("pandas/data/fortune1000.csv", index_col="Rank")
+fortune = pd.read_csv("data/fortune1000.csv", index_col="Rank")
 sectors = fortune.groupby(["Sector", "Industry"])
 g1 = sectors.size()
 g2 = sectors.sum()
@@ -46,7 +46,7 @@ agg method
 """
 import pandas as pd
 
-fortune = pd.read_csv("pandas/data/fortune1000.csv", index_col="Rank")
+fortune = pd.read_csv("data/fortune1000.csv", index_col="Rank")
 sectors = fortune.groupby("Sector")
 g1 = sectors.agg({"Revenue": "sum", "Profits": "sum", "Employees": "mean"})
 g2 = sectors.agg(["size", "sum", "mean"])
@@ -58,7 +58,7 @@ iterating through groups
 """
 import pandas as pd
 
-fortune = pd.read_csv("pandas/data/fortune1000.csv", index_col="Rank")
+fortune = pd.read_csv("data/fortune1000.csv", index_col="Rank")
 sectors = fortune.groupby("Sector")
 df = pd.DataFrame(columns=fortune.columns)
 for sector, data in sectors:

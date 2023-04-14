@@ -1,7 +1,7 @@
 import pandas as pd
 
-bond = pd.read_csv("data/jamesbond.csv", index_col="Film")
-bond.sort_index(inplace=True)
-condition1 = bond["Actor"] == "Sean Connery"
-condition2 = bond["Box Office"] > 800
-print(bond.where(condition1 & condition2).dropna())
+fortune = pd.read_csv("data/fortune1000.csv", index_col="Rank")
+sectors = fortune.groupby("Sector")
+g1 = sectors.first()
+g3 = sectors.groups
+print(g3)
