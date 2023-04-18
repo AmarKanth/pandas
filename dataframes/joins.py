@@ -8,7 +8,6 @@ week2 = pd.read_csv("data/Restaurant - Week 2 Sales.csv")
 customers = pd.read_csv("data/Restaurant - Customers.csv")
 foods = pd.read_csv("data/Restaurant - Foods.csv")
 week = pd.concat(objs=[week1, week2], ignore_index=True)
-week_alt = week1.append(other=week2, ignore_index=True)
 sales = pd.concat(objs=[week1, week2], keys=["Week1", "Week2"])
 w1 = sales.loc[("Week1",)]
 w2 = sales.loc[("Week2",)]
