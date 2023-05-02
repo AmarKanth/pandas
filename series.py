@@ -63,7 +63,6 @@ print(pokemon_df.head(1))
 """
 In place parameter
 1. it mutates the result set
-2. it return error without copy
 """
 import pandas as pd
 
